@@ -1,0 +1,16 @@
+{
+    "actorSpecification": 1,
+    "name": "integrations-input-test",
+    "title": "Input Schema Test Actor",
+    "description": "Comprehensive test Actor for validating all Apify input schema field types and editors",
+    "version": "1.0",
+    "buildTag": "latest",
+    "meta": {
+        "templateId": "ts-empty",
+        "generatedBy": "claude-opus-4-5-20251101"
+    },
+    "dockerfile": "../Dockerfile",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    }
+}
