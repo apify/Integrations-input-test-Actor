@@ -6,8 +6,7 @@
     "version": "1.0",
     "buildTag": "latest",
     "meta": {
-        "templateId": "ts-empty",
-        "generatedBy": "claude-opus-4-5-20251101"
+        "templateId": "integrations-team-input-testing-actor"
     },
     "dockerfile": "../Dockerfile",
     "storages": {
