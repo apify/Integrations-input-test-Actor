@@ -1,0 +1,86 @@
+{
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+        "summary": {
+            "title": "Test Summary",
+            "transformation": {
+                "fields": [
+                    "totalFields",
+                    "passed",
+                    "failed",
+                    "skipped",
+                    "timestamp"
+                ],
+                "limit": 1
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "totalFields": {
+                        "label": "Total Fields",
+                        "format": "number"
+                    },
+                    "passed": {
+                        "label": "Passed",
+                        "format": "number"
+                    },
+                    "failed": {
+                        "label": "Failed",
+                        "format": "number"
+                    },
+                    "skipped": {
+                        "label": "Skipped",
+                        "format": "number"
+                    },
+                    "timestamp": {
+                        "label": "Timestamp",
+                        "format": "date"
+                    }
+                }
+            }
+        },
+        "results": {
+            "title": "Field Results",
+            "transformation": {
+                "fields": [
+                    "fieldKey",
+                    "fieldType",
+                    "editor",
+                    "status",
+                    "receivedType",
+                    "reason"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "fieldKey": {
+                        "label": "Field Key",
+                        "format": "text"
+                    },
+                    "fieldType": {
+                        "label": "Expected Type",
+                        "format": "text"
+                    },
+                    "editor": {
+                        "label": "Editor",
+                        "format": "text"
+                    },
+                    "status": {
+                        "label": "Status",
+                        "format": "text"
+                    },
+                    "receivedType": {
+                        "label": "Received Type",
+                        "format": "text"
+                    },
+                    "reason": {
+                        "label": "Reason",
+                        "format": "text"
+                    }
+                }
+            }
+        }
+    }
+}

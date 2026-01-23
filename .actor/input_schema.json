@@ -1,0 +1,521 @@
+{
+    "title": "Input Schema Test Actor",
+    "description": "Comprehensive test for all Apify input schema field types and editors",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "stringTextfield": {
+            "title": "String Textfield",
+            "description": "Basic string input with textfield editor",
+            "type": "string",
+            "editor": "textfield",
+            "default": "default value",
+            "prefill": "prefilled value",
+            "sectionCaption": "String Fields",
+            "sectionDescription": "Testing all string type editors and variations"
+        },
+        "stringTextfieldWithPattern": {
+            "title": "String with Pattern",
+            "description": "String with regex pattern validation (alphanumeric only, 3-20 chars)",
+            "type": "string",
+            "editor": "textfield",
+            "pattern": "^[a-zA-Z0-9]+$",
+            "minLength": 3,
+            "maxLength": 20,
+            "prefill": "abc123"
+        },
+        "stringTextarea": {
+            "title": "String Textarea",
+            "description": "Multi-line text input",
+            "type": "string",
+            "editor": "textarea",
+            "default": "Line 1\nLine 2\nLine 3"
+        },
+        "stringJavascript": {
+            "title": "JavaScript Code",
+            "description": "JavaScript code editor with syntax highlighting",
+            "type": "string",
+            "editor": "javascript",
+            "prefill": "// JavaScript code\nfunction hello() {\n    return 'Hello World!';\n}"
+        },
+        "stringPython": {
+            "title": "Python Code",
+            "description": "Python code editor with syntax highlighting",
+            "type": "string",
+            "editor": "python",
+            "prefill": "# Python code\ndef hello():\n    return 'Hello World!'"
+        },
+        "stringSelectEnum": {
+            "title": "String Select (Enum)",
+            "description": "Dropdown select with fixed enum values",
+            "type": "string",
+            "editor": "select",
+            "enum": ["option1", "option2", "option3"],
+            "enumTitles": ["First Option", "Second Option", "Third Option"],
+            "default": "option1"
+        },
+        "stringSelectSuggested": {
+            "title": "String Select (Suggested)",
+            "description": "Dropdown with suggested values but allows custom input",
+            "type": "string",
+            "editor": "select",
+            "enumSuggestedValues": ["suggested1", "suggested2", "suggested3"],
+            "prefill": "suggested1"
+        },
+        "stringDateAbsolute": {
+            "title": "Date (Absolute)",
+            "description": "Date picker for absolute dates only",
+            "type": "string",
+            "editor": "datepicker",
+            "dateType": "absolute",
+            "prefill": "2024-01-15"
+        },
+        "stringDateRelative": {
+            "title": "Date (Relative)",
+            "description": "Date picker for relative dates only (e.g., '7 days ago')",
+            "type": "string",
+            "editor": "datepicker",
+            "dateType": "relative",
+            "prefill": "7 days ago"
+        },
+        "stringDateAbsoluteOrRelative": {
+            "title": "Date (Absolute or Relative)",
+            "description": "Date picker allowing both absolute and relative dates",
+            "type": "string",
+            "editor": "datepicker",
+            "dateType": "absoluteOrRelative",
+            "prefill": "2024-01-01"
+        },
+        "stringFileupload": {
+            "title": "Single File Upload",
+            "description": "Upload a single file (string type)",
+            "type": "string",
+            "editor": "fileupload"
+        },
+        "stringSecret": {
+            "title": "Secret String",
+            "description": "Secret string input (masked in UI)",
+            "type": "string",
+            "editor": "textfield",
+            "isSecret": true,
+            "prefill": "secret-value-123"
+        },
+        "integerBasic": {
+            "title": "Integer Basic",
+            "description": "Basic integer input",
+            "type": "integer",
+            "editor": "number",
+            "default": 42,
+            "sectionCaption": "Numeric Fields",
+            "sectionDescription": "Testing integer and number (float) types"
+        },
+        "integerWithRange": {
+            "title": "Integer with Range",
+            "description": "Integer with min/max constraints and unit",
+            "type": "integer",
+            "editor": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "unit": "items",
+            "default": 50
+        },
+        "numberBasic": {
+            "title": "Number (Float) Basic",
+            "description": "Basic floating point number",
+            "type": "number",
+            "editor": "number",
+            "default": 3.14
+        },
+        "numberWithRange": {
+            "title": "Number with Range",
+            "description": "Float with min/max constraints and unit",
+            "type": "number",
+            "editor": "number",
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "unit": "ratio",
+            "default": 0.5
+        },
+        "booleanBasic": {
+            "title": "Boolean Basic",
+            "description": "Basic checkbox",
+            "type": "boolean",
+            "editor": "checkbox",
+            "default": true,
+            "sectionCaption": "Boolean Fields",
+            "sectionDescription": "Testing checkbox and grouped boolean options"
+        },
+        "booleanGrouped1": {
+            "title": "Enable Feature A",
+            "description": "First option in grouped checkboxes",
+            "type": "boolean",
+            "editor": "checkbox",
+            "default": false,
+            "groupCaption": "Feature Toggles",
+            "groupDescription": "Enable or disable optional features"
+        },
+        "booleanGrouped2": {
+            "title": "Enable Feature B",
+            "description": "Second option in grouped checkboxes",
+            "type": "boolean",
+            "editor": "checkbox",
+            "default": true,
+            "groupCaption": "Feature Toggles",
+            "groupDescription": "Enable or disable optional features"
+        },
+        "objectJson": {
+            "title": "Object (JSON Editor)",
+            "description": "Basic JSON object input",
+            "type": "object",
+            "editor": "json",
+            "default": {
+                "key1": "value1",
+                "key2": 123
+            },
+            "sectionCaption": "Object Fields",
+            "sectionDescription": "Testing object type with various editors"
+        },
+        "objectJsonWithConstraints": {
+            "title": "Object with Constraints",
+            "description": "Object with patternKey, patternValue, and property count constraints",
+            "type": "object",
+            "editor": "json",
+            "patternKey": "^[a-z]+$",
+            "patternValue": ".*",
+            "minProperties": 1,
+            "maxProperties": 5,
+            "default": {
+                "name": "test"
+            }
+        },
+        "proxyConfiguration": {
+            "title": "Proxy Configuration",
+            "description": "Apify proxy settings",
+            "type": "object",
+            "editor": "proxy",
+            "default": {
+                "useApifyProxy": false
+            }
+        },
+        "objectSchemaBased": {
+            "title": "Object (Schema-Based)",
+            "description": "Object with sub-properties rendered individually",
+            "type": "object",
+            "editor": "schemaBased",
+            "properties": {
+                "username": {
+                    "type": "string",
+                    "title": "Username",
+                    "description": "Enter your username",
+                    "editor": "textfield"
+                },
+                "email": {
+                    "type": "string",
+                    "title": "Email",
+                    "description": "Enter your email address",
+                    "editor": "textfield",
+                    "pattern": "^[^@]+@[^@]+\\.[^@]+$"
+                },
+                "age": {
+                    "type": "integer",
+                    "title": "Age",
+                    "description": "Enter your age",
+                    "editor": "number",
+                    "minimum": 0,
+                    "maximum": 150
+                },
+                "newsletter": {
+                    "type": "boolean",
+                    "title": "Subscribe to Newsletter",
+                    "description": "Receive updates via email",
+                    "editor": "checkbox",
+                    "default": false
+                }
+            },
+            "required": ["username"]
+        },
+        "object.with" : {
+            "title": "Object with Dot in Key",
+            "description": "Testing object key with dot character",
+            "type": "object",
+            "editor": "json",
+            "default": {
+                "nested": "value"
+            }
+        },
+        "arrayJson": {
+            "title": "Array (JSON Editor)",
+            "description": "Basic array with JSON editor",
+            "type": "array",
+            "editor": "json",
+            "default": ["item1", "item2", "item3"],
+            "minItems": 1,
+            "maxItems": 10,
+            "sectionCaption": "Array Fields",
+            "sectionDescription": "Testing array type with various editors"
+        },
+        "arrayRequestListSources": {
+            "title": "Request List Sources",
+            "description": "URLs in Crawlee RequestListSources format",
+            "type": "array",
+            "editor": "requestListSources",
+            "prefill": [
+                { "url": "https://example.com" },
+                { "url": "https://example.org", "method": "POST" }
+            ]
+        },
+        "arrayPseudoUrls": {
+            "title": "Pseudo URLs",
+            "description": "PseudoUrl patterns for crawling",
+            "type": "array",
+            "editor": "pseudoUrls",
+            "prefill": [
+                { "purl": "https://example.com/[.*]" }
+            ]
+        },
+        "arrayGlobs": {
+            "title": "Glob Patterns",
+            "description": "GlobInput patterns",
+            "type": "array",
+            "editor": "globs",
+            "prefill": [
+                { "glob": "https://example.com/**/*.html" }
+            ]
+        },
+        "arrayKeyValue": {
+            "title": "Key-Value Array",
+            "description": "Array of key-value pairs",
+            "type": "array",
+            "editor": "keyValue",
+            "placeholderKey": "Header Name",
+            "placeholderValue": "Header Value",
+            "prefill": [
+                { "key": "Content-Type", "value": "application/json" }
+            ]
+        },
+        "arrayStringList": {
+            "title": "String List",
+            "description": "Simple list of strings",
+            "type": "array",
+            "editor": "stringList",
+            "placeholderValue": "Enter a value",
+            "prefill": ["value1", "value2"]
+        },
+        "arrayFileupload": {
+            "title": "Multiple File Upload",
+            "description": "Upload multiple files",
+            "type": "array",
+            "editor": "fileupload"
+        },
+        "arraySelectMulti": {
+            "title": "Multi-Select (Enum)",
+            "description": "Multi-select dropdown with fixed options",
+            "type": "array",
+            "editor": "select",
+            "items": {
+                "type": "string",
+                "enum": ["red", "green", "blue", "yellow"],
+                "enumTitles": ["Red", "Green", "Blue", "Yellow"]
+            },
+            "default": ["red", "blue"]
+        },
+        "arraySelectSuggested": {
+            "title": "Multi-Select (Suggested)",
+            "description": "Multi-select with suggested values and custom input",
+            "type": "array",
+            "editor": "select",
+            "items": {
+                "type": "string",
+                "enumSuggestedValues": ["tag1", "tag2", "tag3"]
+            },
+            "prefill": ["tag1"]
+        },
+        "schemaBasedStringArray": {
+            "title": "String Array (Schema-Based)",
+            "description": "Array of strings with schema-based editor",
+            "type": "array",
+            "editor": "schemaBased",
+            "items": {
+                "type": "string"
+            },
+            "prefill": ["string1", "string2"],
+            "sectionCaption": "Sub-Schema Fields",
+            "sectionDescription": "Testing schemaBased editor with various item types"
+        },
+        "schemaBasedIntegerArray": {
+            "title": "Integer Array (Schema-Based)",
+            "description": "Array of integers with schema-based editor",
+            "type": "array",
+            "editor": "schemaBased",
+            "items": {
+                "type": "integer"
+            },
+            "prefill": [1, 2, 3]
+        },
+        "schemaBasedBooleanArray": {
+            "title": "Boolean Array (Schema-Based)",
+            "description": "Array of booleans with schema-based editor",
+            "type": "array",
+            "editor": "schemaBased",
+            "items": {
+                "type": "boolean"
+            },
+            "prefill": [true, false, true]
+        },
+        "schemaBasedObjectArray": {
+            "title": "Object Array (Schema-Based)",
+            "description": "Array of objects with sub-schema",
+            "type": "array",
+            "editor": "schemaBased",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "type": "string",
+                        "editor": "textfield",
+                        "title": "First Name",
+                        "description": "Enter your first name"
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "editor": "textfield",
+                        "title": "Last Name",
+                        "description": "Enter your last name"
+                    },
+                    "age": {
+                        "type": "integer",
+                        "editor": "number",
+                        "title": "Age",
+                        "description": "Enter your age",
+                        "minimum": 0
+                    }
+                },
+                "required": ["lastName"]
+            },
+            "prefill": [
+                { "firstName": "John", "lastName": "Doe", "age": 30 }
+            ]
+        },
+        "schemaBasedObjectArrayComplex": {
+            "title": "Complex Object Array",
+            "description": "Array of objects with multiple field types",
+            "type": "array",
+            "editor": "schemaBased",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "editor": "textfield",
+                        "title": "Name",
+                        "description": "Enter item name"
+                    },
+                    "itemDescription": {
+                        "type": "string",
+                        "editor": "textarea",
+                        "title": "Description",
+                        "description": "Enter item description"
+                    },
+                    "count": {
+                        "type": "integer",
+                        "editor": "number",
+                        "title": "Count",
+                        "description": "Enter count value",
+                        "minimum": 0,
+                        "maximum": 1000
+                    },
+                    "ratio": {
+                        "type": "number",
+                        "editor": "number",
+                        "title": "Ratio",
+                        "description": "Enter ratio value",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "enabled": {
+                        "type": "boolean",
+                        "editor": "checkbox",
+                        "title": "Enabled",
+                        "description": "Toggle enabled state",
+                        "default": true
+                    },
+                    "category": {
+                        "type": "string",
+                        "editor": "select",
+                        "title": "Category",
+                        "description": "Select category type",
+                        "enum": ["typeA", "typeB", "typeC"],
+                        "enumTitles": ["Type A", "Type B", "Type C"]
+                    }
+                },
+                "required": ["name"]
+            },
+            "prefill": [
+                {
+                    "name": "Item 1",
+                    "itemDescription": "First item description",
+                    "count": 10,
+                    "ratio": 0.5,
+                    "enabled": true,
+                    "category": "typeA"
+                }
+            ]
+        },
+        "resourceDataset": {
+            "title": "Dataset Resource",
+            "description": "Pick a dataset resource",
+            "type": "string",
+            "editor": "resourcePicker",
+            "resourceType": "dataset",
+            "resourcePermissions": ["READ"],
+            "sectionCaption": "Resource Fields",
+            "sectionDescription": "Testing resource picker for datasets and key-value stores"
+        },
+        "resourceKeyValueStore": {
+            "title": "Key-Value Store Resource",
+            "description": "Pick a key-value store resource",
+            "type": "string",
+            "editor": "resourcePicker",
+            "resourceType": "keyValueStore",
+            "resourcePermissions": ["READ", "WRITE"]
+        },
+        "nullableString": {
+            "title": "Nullable String",
+            "description": "String field that can be null",
+            "type": "string",
+            "editor": "textfield",
+            "nullable": true,
+            "prefill": "optional value",
+            "sectionCaption": "Special Features",
+            "sectionDescription": "Testing nullable, example, errorMessage, and required fields"
+        },
+        "fieldWithExample": {
+            "title": "Field with Example",
+            "description": "String field showing example property",
+            "type": "string",
+            "editor": "textfield",
+            "example": "This is an example value"
+        },
+        "fieldWithErrorMessage": {
+            "title": "Field with Custom Error",
+            "description": "String with custom error messages for validation",
+            "type": "string",
+            "editor": "textfield",
+            "pattern": "^[A-Z]+$",
+            "minLength": 2,
+            "errorMessage": {
+                "pattern": "Only uppercase letters allowed",
+                "minLength": "At least 2 characters required"
+            },
+            "prefill": "ABC"
+        },
+        "requiredField": {
+            "title": "Required Field",
+            "description": "This field is required",
+            "type": "string",
+            "editor": "textfield",
+            "prefill": "required value"
+        }
+    },
+    "required": ["requiredField"]
+}

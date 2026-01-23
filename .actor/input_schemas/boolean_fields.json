@@ -1,0 +1,31 @@
+{
+    "sectionCaption": "Boolean Fields",
+    "sectionDescription": "Testing checkbox and grouped boolean options",
+    "properties": {
+        "booleanBasic": {
+            "title": "Boolean Basic",
+            "description": "Basic checkbox",
+            "type": "boolean",
+            "editor": "checkbox",
+            "default": true
+        },
+        "booleanGrouped1": {
+            "title": "Enable Feature A",
+            "description": "First option in grouped checkboxes",
+            "type": "boolean",
+            "editor": "checkbox",
+            "default": false,
+            "groupCaption": "Feature Toggles",
+            "groupDescription": "Enable or disable optional features"
+        },
+        "booleanGrouped2": {
+            "title": "Enable Feature B",
+            "description": "Second option in grouped checkboxes",
+            "type": "boolean",
+            "editor": "checkbox",
+            "default": true,
+            "groupCaption": "Feature Toggles",
+            "groupDescription": "Enable or disable optional features"
+        }
+    }
+}

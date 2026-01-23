@@ -1,0 +1,135 @@
+{
+    "sectionCaption": "Sub-Schema Fields",
+    "sectionDescription": "Testing schemaBased editor with various item types",
+    "properties": {
+        "schemaBasedStringArray": {
+            "title": "String Array (Schema-Based)",
+            "description": "Array of strings with schema-based editor",
+            "type": "array",
+            "editor": "schemaBased",
+            "items": {
+                "type": "string"
+            },
+            "prefill": ["string1", "string2"]
+        },
+        "schemaBasedIntegerArray": {
+            "title": "Integer Array (Schema-Based)",
+            "description": "Array of integers with schema-based editor",
+            "type": "array",
+            "editor": "schemaBased",
+            "items": {
+                "type": "integer"
+            },
+            "prefill": [1, 2, 3]
+        },
+        "schemaBasedBooleanArray": {
+            "title": "Boolean Array (Schema-Based)",
+            "description": "Array of booleans with schema-based editor",
+            "type": "array",
+            "editor": "schemaBased",
+            "items": {
+                "type": "boolean"
+            },
+            "prefill": [true, false, true]
+        },
+        "schemaBasedObjectArray": {
+            "title": "Object Array (Schema-Based)",
+            "description": "Array of objects with sub-schema",
+            "type": "array",
+            "editor": "schemaBased",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "type": "string",
+                        "editor": "textfield",
+                        "title": "First Name",
+                        "description": "Enter your first name"
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "editor": "textfield",
+                        "title": "Last Name",
+                        "description": "Enter your last name"
+                    },
+                    "age": {
+                        "type": "integer",
+                        "editor": "number",
+                        "title": "Age",
+                        "description": "Enter your age",
+                        "minimum": 0
+                    }
+                },
+                "required": ["lastName"]
+            },
+            "prefill": [
+                { "firstName": "John", "lastName": "Doe", "age": 30 }
+            ]
+        },
+        "schemaBasedObjectArrayComplex": {
+            "title": "Complex Object Array",
+            "description": "Array of objects with multiple field types",
+            "type": "array",
+            "editor": "schemaBased",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "editor": "textfield",
+                        "title": "Name",
+                        "description": "Enter item name"
+                    },
+                    "itemDescription": {
+                        "type": "string",
+                        "editor": "textarea",
+                        "title": "Description",
+                        "description": "Enter item description"
+                    },
+                    "count": {
+                        "type": "integer",
+                        "editor": "number",
+                        "title": "Count",
+                        "description": "Enter count value",
+                        "minimum": 0,
+                        "maximum": 1000
+                    },
+                    "ratio": {
+                        "type": "number",
+                        "editor": "number",
+                        "title": "Ratio",
+                        "description": "Enter ratio value",
+                        "minimum": 0,
+                        "maximum": 1
+                    },
+                    "enabled": {
+                        "type": "boolean",
+                        "editor": "checkbox",
+                        "title": "Enabled",
+                        "description": "Toggle enabled state",
+                        "default": true
+                    },
+                    "category": {
+                        "type": "string",
+                        "editor": "select",
+                        "title": "Category",
+                        "description": "Select category type",
+                        "enum": ["typeA", "typeB", "typeC"],
+                        "enumTitles": ["Type A", "Type B", "Type C"]
+                    }
+                },
+                "required": ["name"]
+            },
+            "prefill": [
+                {
+                    "name": "Item 1",
+                    "itemDescription": "First item description",
+                    "count": 10,
+                    "ratio": 0.5,
+                    "enabled": true,
+                    "category": "typeA"
+                }
+            ]
+        }
+    }
+}

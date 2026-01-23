@@ -1,0 +1,84 @@
+{
+    "sectionCaption": "Object Fields",
+    "sectionDescription": "Testing object type with various editors",
+    "properties": {
+        "objectJson": {
+            "title": "Object (JSON Editor)",
+            "description": "Basic JSON object input",
+            "type": "object",
+            "editor": "json",
+            "default": {
+                "key1": "value1",
+                "key2": 123
+            }
+        },
+        "objectJsonWithConstraints": {
+            "title": "Object with Constraints",
+            "description": "Object with patternKey, patternValue, and property count constraints",
+            "type": "object",
+            "editor": "json",
+            "patternKey": "^[a-z]+$",
+            "patternValue": ".*",
+            "minProperties": 1,
+            "maxProperties": 5,
+            "default": {
+                "name": "test"
+            }
+        },
+        "proxyConfiguration": {
+            "title": "Proxy Configuration",
+            "description": "Apify proxy settings",
+            "type": "object",
+            "editor": "proxy",
+            "default": {
+                "useApifyProxy": false
+            }
+        },
+        "objectSchemaBased": {
+            "title": "Object (Schema-Based)",
+            "description": "Object with sub-properties rendered individually",
+            "type": "object",
+            "editor": "schemaBased",
+            "properties": {
+                "username": {
+                    "type": "string",
+                    "title": "Username",
+                    "description": "Enter your username",
+                    "editor": "textfield"
+                },
+                "email": {
+                    "type": "string",
+                    "title": "Email",
+                    "description": "Enter your email address",
+                    "editor": "textfield",
+                    "pattern": "^[^@]+@[^@]+\\.[^@]+$"
+                },
+                "age": {
+                    "type": "integer",
+                    "title": "Age",
+                    "description": "Enter your age",
+                    "editor": "number",
+                    "minimum": 0,
+                    "maximum": 150
+                },
+                "newsletter": {
+                    "type": "boolean",
+                    "title": "Subscribe to Newsletter",
+                    "description": "Receive updates via email",
+                    "editor": "checkbox",
+                    "default": false
+                }
+            },
+            "required": ["username"]
+        },
+        "object.with": {
+            "title": "Object with Dot in Key",
+            "description": "Testing object key with dot character",
+            "type": "object",
+            "editor": "json",
+            "default": {
+                "nested": "value"
+            }
+        }
+    }
+}
