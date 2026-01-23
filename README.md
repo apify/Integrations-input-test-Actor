@@ -1,6 +1,6 @@
 # Input Schema Test Actor
 
-A comprehensive test Actor for validating all Apify input schema field types and editors. This Actor serves as a reference implementation and testing ground for the Apify platform's input schema capabilities.
+A comprehensive test Actor for validating all Apify input schema field types and editors. This Actor is mainly used for testing inputs on integrations where we dynamically generate the UI input based on the Actor's input schema.
 
 ## Features
 
