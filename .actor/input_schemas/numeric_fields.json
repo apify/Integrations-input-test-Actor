@@ -1,0 +1,40 @@
+{
+    "sectionCaption": "Numeric Fields",
+    "sectionDescription": "Testing integer and number (float) types",
+    "properties": {
+        "integerBasic": {
+            "title": "Integer Basic",
+            "description": "Basic integer input",
+            "type": "integer",
+            "editor": "number",
+            "default": 42
+        },
+        "integerWithRange": {
+            "title": "Integer with Range",
+            "description": "Integer with min/max constraints and unit",
+            "type": "integer",
+            "editor": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "unit": "items",
+            "default": 50
+        },
+        "numberBasic": {
+            "title": "Number (Float) Basic",
+            "description": "Basic floating point number",
+            "type": "number",
+            "editor": "number",
+            "default": 3.14
+        },
+        "numberWithRange": {
+            "title": "Number with Range",
+            "description": "Float with min/max constraints and unit",
+            "type": "number",
+            "editor": "number",
+            "minimum": 0.0,
+            "maximum": 1.0,
+            "unit": "ratio",
+            "default": 0.5
+        }
+    }
+}

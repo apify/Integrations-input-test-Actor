@@ -1,0 +1,42 @@
+{
+    "sectionCaption": "Special Features",
+    "sectionDescription": "Testing nullable, example, errorMessage, and required fields",
+    "properties": {
+        "nullableString": {
+            "title": "Nullable String",
+            "description": "String field that can be null",
+            "type": "string",
+            "editor": "textfield",
+            "nullable": true,
+            "prefill": "optional value"
+        },
+        "fieldWithExample": {
+            "title": "Field with Example",
+            "description": "String field showing example property",
+            "type": "string",
+            "editor": "textfield",
+            "example": "This is an example value"
+        },
+        "fieldWithErrorMessage": {
+            "title": "Field with Custom Error",
+            "description": "String with custom error messages for validation",
+            "type": "string",
+            "editor": "textfield",
+            "pattern": "^[A-Z]+$",
+            "minLength": 2,
+            "errorMessage": {
+                "pattern": "Only uppercase letters allowed",
+                "minLength": "At least 2 characters required"
+            },
+            "prefill": "ABC"
+        },
+        "requiredField": {
+            "title": "Required Field",
+            "description": "This field is required",
+            "type": "string",
+            "editor": "textfield",
+            "prefill": "required value"
+        }
+    },
+    "required": ["requiredField"]
+}

@@ -1,0 +1,91 @@
+{
+    "sectionCaption": "Array Fields",
+    "sectionDescription": "Testing array type with various editors",
+    "properties": {
+        "arrayJson": {
+            "title": "Array (JSON Editor)",
+            "description": "Basic array with JSON editor",
+            "type": "array",
+            "editor": "json",
+            "default": ["item1", "item2", "item3"],
+            "minItems": 1,
+            "maxItems": 10
+        },
+        "arrayRequestListSources": {
+            "title": "Request List Sources",
+            "description": "URLs in Crawlee RequestListSources format",
+            "type": "array",
+            "editor": "requestListSources",
+            "prefill": [
+                { "url": "https://example.com" },
+                { "url": "https://example.org", "method": "POST" }
+            ]
+        },
+        "arrayPseudoUrls": {
+            "title": "Pseudo URLs",
+            "description": "PseudoUrl patterns for crawling",
+            "type": "array",
+            "editor": "pseudoUrls",
+            "prefill": [
+                { "purl": "https://example.com/[.*]" }
+            ]
+        },
+        "arrayGlobs": {
+            "title": "Glob Patterns",
+            "description": "GlobInput patterns",
+            "type": "array",
+            "editor": "globs",
+            "prefill": [
+                { "glob": "https://example.com/**/*.html" }
+            ]
+        },
+        "arrayKeyValue": {
+            "title": "Key-Value Array",
+            "description": "Array of key-value pairs",
+            "type": "array",
+            "editor": "keyValue",
+            "placeholderKey": "Header Name",
+            "placeholderValue": "Header Value",
+            "prefill": [
+                { "key": "Content-Type", "value": "application/json" }
+            ]
+        },
+        "arrayStringList": {
+            "title": "String List",
+            "description": "Simple list of strings",
+            "type": "array",
+            "editor": "stringList",
+            "placeholderValue": "Enter a value",
+            "prefill": ["value1", "value2"]
+        },
+        "arrayFileupload": {
+            "title": "Multiple File Upload",
+            "description": "Upload multiple files",
+            "type": "array",
+            "editor": "fileupload"
+        },
+        "arraySelectMulti": {
+            "title": "Multi-Select (Enum)",
+            "description": "Multi-select dropdown with fixed options",
+            "type": "array",
+            "editor": "select",
+            "items": {
+                "type": "string",
+                "enum": ["red", "green", "blue", "yellow"],
+                "enumTitles": ["Red", "Green", "Blue", "Yellow"]
+            },
+            "default": ["red", "blue"]
+        },
+        "arraySelectSuggested": {
+            "title": "Multi-Select (Suggested)",
+            "description": "Multi-select with suggested values and custom input",
+            "type": "array",
+            "editor": "select",
+            "items": {
+                "type": "string",
+                "enumSuggestedValues": ["tag1", "tag2", "tag3"]
+            },
+            "prefill": ["tag1"]
+        }
+    }
+}

@@ -1,0 +1,100 @@
+{
+    "sectionCaption": "String Fields",
+    "sectionDescription": "Testing all string type editors and variations",
+    "properties": {
+        "stringTextfield": {
+            "title": "String Textfield",
+            "description": "Basic string input with textfield editor",
+            "type": "string",
+            "editor": "textfield",
+            "default": "default value",
+            "prefill": "prefilled value"
+        },
+        "stringTextfieldWithPattern": {
+            "title": "String with Pattern",
+            "description": "String with regex pattern validation (alphanumeric only, 3-20 chars)",
+            "type": "string",
+            "editor": "textfield",
+            "pattern": "^[a-zA-Z0-9]+$",
+            "minLength": 3,
+            "maxLength": 20,
+            "prefill": "abc123"
+        },
+        "stringTextarea": {
+            "title": "String Textarea",
+            "description": "Multi-line text input",
+            "type": "string",
+            "editor": "textarea",
+            "default": "Line 1\nLine 2\nLine 3"
+        },
+        "stringJavascript": {
+            "title": "JavaScript Code",
+            "description": "JavaScript code editor with syntax highlighting",
+            "type": "string",
+            "editor": "javascript",
+            "prefill": "// JavaScript code\nfunction hello() {\n    return 'Hello World!';\n}"
+        },
+        "stringPython": {
+            "title": "Python Code",
+            "description": "Python code editor with syntax highlighting",
+            "type": "string",
+            "editor": "python",
+            "prefill": "# Python code\ndef hello():\n    return 'Hello World!'"
+        },
+        "stringSelectEnum": {
+            "title": "String Select (Enum)",
+            "description": "Dropdown select with fixed enum values",
+            "type": "string",
+            "editor": "select",
+            "enum": ["option1", "option2", "option3"],
+            "enumTitles": ["First Option", "Second Option", "Third Option"],
+            "default": "option1"
+        },
+        "stringSelectSuggested": {
+            "title": "String Select (Suggested)",
+            "description": "Dropdown with suggested values but allows custom input",
+            "type": "string",
+            "editor": "select",
+            "enumSuggestedValues": ["suggested1", "suggested2", "suggested3"],
+            "prefill": "suggested1"
+        },
+        "stringDateAbsolute": {
+            "title": "Date (Absolute)",
+            "description": "Date picker for absolute dates only",
+            "type": "string",
+            "editor": "datepicker",
+            "dateType": "absolute",
+            "prefill": "2024-01-15"
+        },
+        "stringDateRelative": {
+            "title": "Date (Relative)",
+            "description": "Date picker for relative dates only (e.g., '7 days ago')",
+            "type": "string",
+            "editor": "datepicker",
+            "dateType": "relative",
+            "prefill": "7 days ago"
+        },
+        "stringDateAbsoluteOrRelative": {
+            "title": "Date (Absolute or Relative)",
+            "description": "Date picker allowing both absolute and relative dates",
+            "type": "string",
+            "editor": "datepicker",
+            "dateType": "absoluteOrRelative",
+            "prefill": "2024-01-01"
+        },
+        "stringFileupload": {
+            "title": "Single File Upload",
+            "description": "Upload a single file (string type)",
+            "type": "string",
+            "editor": "fileupload"
+        },
+        "stringSecret": {
+            "title": "Secret String",
+            "description": "Secret string input (masked in UI)",
+            "type": "string",
+            "editor": "textfield",
+            "isSecret": true,
+            "prefill": "secret-value-123"
+        }
+    }
+}

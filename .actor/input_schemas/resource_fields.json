@@ -1,0 +1,22 @@
+{
+    "sectionCaption": "Resource Fields",
+    "sectionDescription": "Testing resource picker for datasets and key-value stores",
+    "properties": {
+        "resourceDataset": {
+            "title": "Dataset Resource",
+            "description": "Pick a dataset resource",
+            "type": "string",
+            "editor": "resourcePicker",
+            "resourceType": "dataset",
+            "resourcePermissions": ["READ"]
+        },
+        "resourceKeyValueStore": {
+            "title": "Key-Value Store Resource",
+            "description": "Pick a key-value store resource",
+            "type": "string",
+            "editor": "resourcePicker",
+            "resourceType": "keyValueStore",
+            "resourcePermissions": ["READ", "WRITE"]
+        }
+    }
+}
