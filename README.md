@@ -11,8 +11,7 @@ A comprehensive test Actor for validating all Apify input schema field types and
 
 The input schema is organized into logical sections. Each section tests different field types and editor configurations. The individual schema files are located in `.actor/input_schemas/`.
 
-<details>
-<summary><strong>📝 String Fields</strong></summary>
+### String Fields
 
 Testing all string type editors and variations.
 
@@ -31,12 +30,9 @@ Testing all string type editors and variations.
 | `stringFileupload` | `fileupload` | Upload a single file (string type) |
 | `stringSecret` | `textfield` | Secret string input (masked in UI, `isSecret: true`) |
 
-📁 Schema file: [.actor/input_schemas/string_fields.json](.actor/input_schemas/string_fields.json)
+Schema file: [.actor/input_schemas/string_fields.json](.actor/input_schemas/string_fields.json)
 
-</details>
-
-<details>
-<summary><strong>🔢 Numeric Fields</strong></summary>
+### Numeric Fields
 
 Testing integer and number (float) types.
 
@@ -47,12 +43,9 @@ Testing integer and number (float) types.
 | `numberBasic` | `number` | Basic floating point number |
 | `numberWithRange` | `number` | Float with min/max constraints and unit |
 
-📁 Schema file: [.actor/input_schemas/numeric_fields.json](.actor/input_schemas/numeric_fields.json)
+Schema file: [.actor/input_schemas/numeric_fields.json](.actor/input_schemas/numeric_fields.json)
 
-</details>
-
-<details>
-<summary><strong>☑️ Boolean Fields</strong></summary>
+### Boolean Fields
 
 Testing checkbox and grouped boolean options.
 
@@ -62,12 +55,9 @@ Testing checkbox and grouped boolean options.
 | `booleanGrouped1` | First option in grouped checkboxes (Feature Toggles group) |
 | `booleanGrouped2` | Second option in grouped checkboxes (Feature Toggles group) |
 
-📁 Schema file: [.actor/input_schemas/boolean_fields.json](.actor/input_schemas/boolean_fields.json)
+Schema file: [.actor/input_schemas/boolean_fields.json](.actor/input_schemas/boolean_fields.json)
 
-</details>
-
-<details>
-<summary><strong>📦 Object Fields</strong></summary>
+### Object Fields
 
 Testing object type with various editors.
 
@@ -79,12 +69,9 @@ Testing object type with various editors.
 | `objectSchemaBased` | `schemaBased` | Object with sub-properties rendered individually |
 | `object.with` | `json` | Testing object key with dot character |
 
-📁 Schema file: [.actor/input_schemas/object_fields.json](.actor/input_schemas/object_fields.json)
+Schema file: [.actor/input_schemas/object_fields.json](.actor/input_schemas/object_fields.json)
 
-</details>
-
-<details>
-<summary><strong>📋 Array Fields</strong></summary>
+### Array Fields
 
 Testing array type with various editors.
 
@@ -100,12 +87,9 @@ Testing array type with various editors.
 | `arraySelectMulti` | `select` | Multi-select dropdown with fixed options |
 | `arraySelectSuggested` | `select` | Multi-select with suggested values and custom input |
 
-📁 Schema file: [.actor/input_schemas/array_fields.json](.actor/input_schemas/array_fields.json)
+Schema file: [.actor/input_schemas/array_fields.json](.actor/input_schemas/array_fields.json)
 
-</details>
-
-<details>
-<summary><strong>🔧 Sub-Schema Fields</strong></summary>
+### Sub-Schema Fields
 
 Testing schemaBased editor with various item types.
 
@@ -117,12 +101,9 @@ Testing schemaBased editor with various item types.
 | `schemaBasedObjectArray` | `object` | Array of objects with sub-schema (firstName, lastName, age) |
 | `schemaBasedObjectArrayComplex` | `object` | Array of objects with multiple field types |
 
-📁 Schema file: [.actor/input_schemas/sub_schema_fields.json](.actor/input_schemas/sub_schema_fields.json)
+Schema file: [.actor/input_schemas/sub_schema_fields.json](.actor/input_schemas/sub_schema_fields.json)
 
-</details>
-
-<details>
-<summary><strong>🗂️ Resource Fields</strong></summary>
+### Resource Fields
 
 Testing resource picker for datasets and key-value stores.
 
@@ -131,12 +112,9 @@ Testing resource picker for datasets and key-value stores.
 | `resourceDataset` | `dataset` | READ |
 | `resourceKeyValueStore` | `keyValueStore` | READ, WRITE |
 
-📁 Schema file: [.actor/input_schemas/resource_fields.json](.actor/input_schemas/resource_fields.json)
+Schema file: [.actor/input_schemas/resource_fields.json](.actor/input_schemas/resource_fields.json)
 
-</details>
-
-<details>
-<summary><strong>⚡ Special Features</strong></summary>
+### Special Features
 
 Testing nullable, example, errorMessage, and required fields.
 
@@ -147,9 +125,7 @@ Testing nullable, example, errorMessage, and required fields.
 | `fieldWithErrorMessage` | `errorMessage` | String with custom error messages for validation |
 | `requiredField` | `required` | This field is required |
 
-📁 Schema file: [.actor/input_schemas/special_features.json](.actor/input_schemas/special_features.json)
-
-</details>
+Schema file: [.actor/input_schemas/special_features.json](.actor/input_schemas/special_features.json)
 
 ## Project Structure
 
